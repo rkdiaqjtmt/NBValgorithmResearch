@@ -8,7 +8,8 @@ import sys
 def main():
     runner = Path(__file__).resolve().parent / "run.py"
     failed = False
-    for size in range(100, 550, 100):
+    
+    for size in range(100, 5050, 100):
         for obstacle_probability in (0.1, 0.3, 0.5):
             used_seeds = set()
             for repeat in range(1, 4):
@@ -36,6 +37,7 @@ def main():
                 if completed.returncode != 0:
                     failed = True
                     print("이 조합에서 오류 또는 결과 불일치가 발생했습니다.", flush=True)
+                    
     return 1 if failed else 0
 
 
